@@ -2,22 +2,44 @@
   display: flex;
   gap: 10px;
 }
-.parentContainer{
+.parentContainer {
   width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 5rem 1fr;
+  margin: 2rem 0;
 }
 
+.purpleColor {
+  color: #4640de;
+}
+.siteWrapper {
+  background: #f9f9f9 0% 0% no-repeat padding-box;
+  border-radius: 9px;
+  margin-bottom: 10px;
+  padding: 0.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.app-icon {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+.siteWrapper > img:last-child {
+  width: 1rem;
+  height: 1rem;
+}
 @media screen and (max-width: 1200px) {
-  .Cards{
+  .Cards {
     flex-direction: column;
   }
-  .parentContainer{
+  .parentContainer {
     height: 9rem;
   }
 }
 
-@media screen and (max-width: 768px)
-{
-  .Cards{
+@media screen and (max-width: 768px) {
+  .Cards {
     width: 90%;
   }
 }

@@ -1,0 +1,17 @@
+.childProfile {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.childImage {
+  border-radius: 100%;
+  width: 8rem;
+  height: 8rem;
+}
+
+.greyColor {
+  color: #9698ab;
+  font-size: 0.8rem;
+}
