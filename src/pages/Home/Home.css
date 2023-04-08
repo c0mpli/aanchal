@@ -1,9 +1,29 @@
 .Home-section1 {
   margin-top: 5rem;
   color: white;
-  margin: 10rem 0;
-  margin-left: 8%;
+  margin: 8rem 0;
   font-size: 2rem;
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+}
+.blueColor {
+  color: #456ee1;
+}
+.childDevices {
+  margin-left: 8%;
+  margin-top: 2%;
+}
+.homePP {
+  width: 8rem;
+  height: 8rem;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  margin-top: -5rem !important;
 }
 .Home-bg {
   position: absolute;

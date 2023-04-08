@@ -33,43 +33,25 @@ function Navbar(props) {
       <nav className="landing-navbar" id="navbar">
         <div className="navbar-logo" onClick={() => navigate("/")}>
           <img src={navbarIcon} />
-          <h1>Blinder</h1>
+          <h1>Aanchal</h1>
         </div>
         <div className={isNavExpanded ? "navbar-menu expanded" : "navbar-menu"}>
           <ul>
             {user && (
               <>
                 <li>
-                  <Link to="/dashboard" id="dashboard">
-                    Dashboard
+                  <Link to="/fammap" id="fammap">
+                    Fam-map
                   </Link>
                 </li>
                 <li>
-                  <Link to="/events" id="events">
-                    Events
-                  </Link>
-                </li>
-                <li>
-                  <Link to="/discover" id="discover">
-                    Discover
+                  <Link to="/adduser" id="adduser">
+                    Add User
                   </Link>
                 </li>
               </>
             )}
-            <li>
-              <a
-                href="file://localhost/C:/Users/jashd/OneDrive/Documents/Github/Hackathons/coc23-frontend/frontend/public/map.html"
-                target="__blank"
-                id="explore"
-              >
-                Explore
-              </a>
-            </li>
-            <li>
-              <Link to="/shop" id="shop">
-                Shop
-              </Link>
-            </li>
+
             {user && (
               <li>
                 <button onClick={handleLogout}>Logout</button>

@@ -6,11 +6,25 @@ import { useEffect } from "react";
 import axios from "axios";
 import { useState } from "react";
 import { useAuthContext } from "../../hooks/useAuthContext";
+import DevicesCard from "../../components/DevicesCard/DevicesCard";
 function Home() {
   const { user } = useAuthContext();
-
-  const [data, setData] = useState();
-  const [locationData, setLocationData] = useState();
+  console.log(user?.user.firstname);
+  const data = [
+    {
+      name: "Sunidhi",
+      age: "14",
+      lastUsed: "Instagram",
+      lastLocation: "Shanti Society, Khar",
+    },
+    {
+      name: "Sunidhi",
+      age: "14",
+      lastUsed: "Instagram",
+      lastLocation: "Shanti Society, Khar",
+    },
+  ];
+  const [childData, setChildData] = useState();
   //   function matchUsers() {
   //     axios
   //       .get("https://coc-1.adityasurve1.repl.co/user/match", {
@@ -67,8 +81,20 @@ function Home() {
       <div className="Home-section1">
         <h1>
           Welcome back,<br></br>
-          {user?.user?.firstname} ! 👋
+          {user?.user.firstname} ! 👋
         </h1>
+      </div>
+      <img
+        src={`https://api.dicebear.com/6.x/fun-emoji/svg?seed=${user?.user.firstname}`}
+        alt="avatar"
+        className="homePP"
+      />
+      <div className="childDevices blueColor">
+        {data &&
+          data.map((value, index) => {
+            return <DevicesCard data={value} index={index} />;
+          })}
+        <h1>Your child devices</h1>
       </div>
     </div>
   );

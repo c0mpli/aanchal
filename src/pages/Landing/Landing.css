@@ -6,12 +6,13 @@
   left: 0;
   top: 0;
 }
+
 .hero-section {
   margin-top: 10rem;
   padding: 0 8%;
-  display: flex;
-  flex-direction: column;
   gap: 1.4rem;
+  display: grid;
+  grid-template-columns: auto 43rem;
 }
 .hero-perfect {
   color: #9747ff;
@@ -25,7 +26,6 @@
 .hero-content {
   color: white;
   font-size: 1.8rem;
-  width: 55%;
   font-weight: 600;
 }
 .hero-specialP {
@@ -42,6 +42,7 @@
   width: 100% !important;
   display: flex;
   gap: 2rem;
+  margin-top: 2rem;
 }
 .hero-buttons button {
   background: #ffffff;
@@ -60,7 +61,6 @@
 }
 .explore-section,
 .readme-section {
-  margin-top: 25rem;
   padding: 0 8%;
 }
 .explore-grids {
@@ -73,12 +73,16 @@
   display: flex;
   align-items: center;
   padding: 0;
-  padding-left: 8% !important;
+  background-image: url("../../assets/mesh-gradient\ 2.png");
+  margin-top: -1.85rem;
 }
+
 .readme-content-wrapper {
   display: flex;
   flex-direction: column;
   gap: 2rem;
+  width: 35%;
+  padding-left: 8% !important;
 }
 .readme-section p {
   font-weight: 500;
@@ -102,19 +106,24 @@
   transition: 0.3s;
 }
 .readme-title {
-  color: #9747ff;
+  color: rgba(255, 255, 255, 1);
+
   font-size: 4rem;
 }
-
+.features-wrapper {
+  background-image: url("../../assets/section2BG.png");
+  width: auto;
+  height: auto;
+  padding: 10rem 10%;
+  margin-top: 2.1rem;
+}
 .features-section {
   display: flex;
-  background: #ffe1ec;
-  border: 2px solid #000000;
-  box-shadow: 5px 5px 0px #000000;
+  background: #f2e1ff;
   gap: 1rem;
   text-align: center;
-  margin: 10rem 10%;
   height: auto;
+  box-shadow: 5px 5px 0px #456ee1;
 }
 .features-vertical-line {
   background-color: black;
@@ -172,56 +181,27 @@
   margin-top: 2rem;
   font-size: 1.3rem;
 }
-.input-wrapper input {
-  border: none;
+
+.footer {
+  background-image: url("../../assets/footer.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.footer button {
   background: #ffffff;
-  border: 1px solid #000000;
   box-shadow: 5px 5px 0px #000000;
   border-radius: 5px;
-  width: 20rem;
-  padding: 1rem;
-  margin-top: 2rem;
-}
-.newsletter-section img {
-  width: 100%;
-  z-index: -2;
-}
-
-.pricing-section {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 4rem;
-  width: 100%;
-  margin-top: 7rem;
-}
-.pricing-lhs,
-.pricing-rhs {
-  padding: 1rem;
-  height: 300px;
-  text-align: left;
-  border: 2px solid #000000;
-  box-shadow: 5px 5px 0px #000000;
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  align-items: center;
-}
-.pricing-lhs button,
-.pricing-rhs button {
-  background: #1e1e1e;
-  border-radius: 30px;
-  color: white;
-  height: 2rem;
-  padding: 0 1rem;
-  text-align: center;
+  border: none;
+  height: auto;
+  padding: 1rem 3rem;
+  font-weight: 700;
+  font-size: 1.2rem;
   cursor: pointer;
-}
-.pricing-lhs {
-  background-color: #f2e1ff;
-}
-.pricing-rhs {
-  background-color: #ffe9aa;
 }
 @media screen and (max-width: 1200px) {
   .ourtips-card {
