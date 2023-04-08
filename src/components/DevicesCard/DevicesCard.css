@@ -3,7 +3,6 @@
   border-radius: 10px;
   background: rgba(243, 241, 255, 0.5);
   padding: 1rem;
-  cursor: pointer;
 }
 
 .addwrapper {
@@ -19,8 +18,11 @@
   border-radius: 10px;
   cursor: pointer;
 }
+.card-wrapper > button {
+  cursor: pointer;
+}
 .addwrapper:hover,
-.card-wrapper:hover {
+.card-wrapper > button:hover {
   transform: scale(1.1);
   transition: 0.3s;
 }

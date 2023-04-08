@@ -49,6 +49,11 @@ function Navbar(props) {
                     Add User
                   </Link>
                 </li>
+                <li>
+                  <Link to="/mfa" id="mfa">
+                    2FA
+                  </Link>
+                </li>
               </>
             )}
 

@@ -1,31 +1,32 @@
 import React, { useState } from "react";
-import "./Login.css";
 import axios from "axios";
 import { useNavigate, Link } from "react-router-dom";
 import Navbar from "../../components/Navbar/Navbar";
 import { useAuthContext } from "../../hooks/useAuthContext";
 
-function Login() {
+function Signup() {
   const { dispatch } = useAuthContext();
   const [email, setEmail] = useState();
   const [password, setPassword] = useState();
+  const [number, setNumber] = useState();
+  const [name, setName] = useState();
+
   const [errorMessage, setErrorMessage] = useState("");
   const navigate = useNavigate();
 
   async function handleSubmit(event) {
     event.preventDefault();
+    const names = name.split(" ");
     axios
-      .post("https://cs-dj.workspaceomkarb.repl.co/user/login", {
+      .post("https://cs-dj.workspaceomkarb.repl.co/user/register", {
         email: email,
         password: password,
+        firstname: names[0],
+        lastname: names[names.length - 1],
+        mobilenum: number,
       })
       .then((response) => {
-        setErrorMessage("");
-        dispatch({ type: "LOGIN", payload: response.data });
-        localStorage.setItem("user", JSON.stringify(response.data));
-        localStorage.setItem("token", response.data.token);
-        localStorage.setItem("name", response.data.name);
-        navigate("../home");
+        setErrorMessage("ok");
       })
       .catch((err) => {
         console.log(err.message);
@@ -38,7 +39,17 @@ function Login() {
       <div className="content-wrapper">
         <div className="login-form-container">
           <form className="login-form">
-            <h1>Sign in to a better dating experience.</h1>
+            <h1>Sign up to bring a better future of our kids.</h1>
+            <input
+              type="text"
+              placeholder="Name"
+              onChange={(e) => setName(e.target.value)}
+            />
+            <input
+              type="number"
+              placeholder="Number"
+              onChange={(e) => setNumber(e.target.value)}
+            />
             <input
               type="email"
               placeholder="Email"
@@ -49,7 +60,7 @@ function Login() {
               placeholder="Password"
               onChange={(e) => setPassword(e.target.value)}
             />
-            <p style={{ color: "red" }}>
+            <p style={{ color: errorMessage === "ok" ? "green" : "red" }}>
               {errorMessage === "ok"
                 ? "Signup Successfull, Please login"
                 : errorMessage}
@@ -62,7 +73,7 @@ function Login() {
             </button>
             <div className="login-subtitle">
               <p>New Here?</p>
-              <Link to="/signup">Signup</Link>
+              <Link to="/aboutyou">Signup</Link>
             </div>
           </form>
         </div>
@@ -71,4 +82,4 @@ function Login() {
   );
 }
 
-export default Login;
+export default Signup;

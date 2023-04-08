@@ -46,7 +46,8 @@
   justify-content: center;
   align-items: center;
   margin: 0 auto;
-  margin-top: -5rem !important;
+  margin-top: -6rem !important;
+  margin-bottom: 3rem;
 }
 .Home-bg {
   position: absolute;

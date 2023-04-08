@@ -11,7 +11,7 @@ import Add from "../../assets/plus.png";
 import { useNavigate } from "react-router-dom";
 function Home() {
   const { user } = useAuthContext();
-  console.log(user?.user.firstname);
+  const parent_id = user?.user._id;
   const data = [
     {
       name: "Sunidhi",
@@ -28,54 +28,24 @@ function Home() {
   ];
   const [childData, setChildData] = useState();
   const navigate = useNavigate();
-  //   function matchUsers() {
-  //     axios
-  //       .get("https://coc-1.adityasurve1.repl.co/user/match", {
-  //         headers: { token: localStorage.getItem("token") },
-  //         auth: { user: { _id: localStorage.getItem("token") } },
-  //       })
-  //       .then((response) => {
-  //         console.log("Matched");
-  //       })
-  //       .catch((error) => {
-  //         console.log(error);
-  //       });
-  //   }
-  //   function locationUsers() {
-  //     axios
-  //       .get("https://coc-1.adityasurve1.repl.co/user/match2", {
-  //         headers: { token: localStorage.getItem("token") },
-  //         auth: { user: { _id: localStorage.getItem("token") } },
-  //       })
-  //       .then((response) => {
-  //         setLocationData(response.data);
-  //       })
-  //       .catch((error) => {
-  //         console.log(error);
-  //       });
-  //   }
-  //   function getData() {
-  //     axios
-  //       .get("https://coc-1.adityasurve1.repl.co/user/test", {
-  //         headers: { token: localStorage.getItem("token") },
-  //         auth: { user: { _id: localStorage.getItem("token") } },
-  //       })
-  //       .then((response) => {
-  //         console.log(response.data);
-  //         setData(response.data);
-  //         //setData(response.data);
-  //         //setIsLoading(false);
-  //       })
-  //       .catch((error) => {
-  //         console.log(error);
-  //       });
-  //   }
 
-  //   useEffect(() => {
-  //     matchUsers();
-  //     locationUsers();
-  //     getData();
-  //   });
+  function getData() {
+    axios
+      .get(`https://cs-dj.workspaceomkarb.repl.co/child?parent=${parent_id}`)
+      .then((response) => {
+        console.log(response.data);
+        setChildData(response.data);
+        //setData(response.data);
+        //setIsLoading(false);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }
+
+  useEffect(() => {
+    getData();
+  }, []);
 
   return (
     <div className="Home-wrapper">
@@ -93,8 +63,8 @@ function Home() {
         className="homePP"
       />
       <div className="childDevices blueColor">
-        {data &&
-          data.map((value, index) => {
+        {childData &&
+          childData.map((value, index) => {
             return (
               <DevicesCard data={value} index={index} length={data.length} />
             );
