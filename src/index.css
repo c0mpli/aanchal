@@ -1,10 +1,75 @@
-@tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
 
-*{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+
+  --HMPLogoBlue: #013765;
+  --HMPLogoGrey: #8b8a8f;
+  --HMPLogoYellow: #fdce02;
+  --HMPOffWhite: #f3f3f4;
+  --HMPOffWhiteCircle: #f3f3f466;
+  --HMPBlue: #0062b5;
+  --HMPSideBarIcons: #013765;
+  --HMPLightBlue: #b8ddfc80;
+  --DarkBG: #000010;
+}
+body,
+html,
+h1,
+h2,
+h3,
+h4,
+p {
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
+}
+
+.App {
+  /* padding: 0.5rem 3.5rem; */
+  color: var(--black);
+  background: linear-gradient(
+    106.37deg,
+    #ffe1bc 29.63%,
+    #ffcfd1 51.55%,
+    #f3c6f1 90.85%
+  );
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Inter", sans-serif;
+}
+
+.AppGlass {
+  display: grid;
+  height: 97%;
+  width: 97%;
+  background: var(--glass);
+  border-radius: 2rem;
+  gap: 16px;
+  grid-template-columns: 11rem auto 20rem;
+  overflow: hidden;
+}
+
+@media screen and (max-width: 1200px) {
+  .AppGlass {
+    grid-template-columns: 10% 50% auto;
+    overflow-y: scroll;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .AppGlass {
+    grid-template-columns: 1fr;
+  }
 }
