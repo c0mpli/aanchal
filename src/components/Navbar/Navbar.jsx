@@ -15,8 +15,8 @@ function Navbar(props) {
     const navbar = document.querySelector("#navbar");
 
     window.scrollY > 0
-      ? navbar.classList.add("fixed")
-      : navbar.classList.remove("fixed");
+      ? navbar?.classList.add("fixed")
+      : navbar?.classList.remove("fixed");
   });
 
   function handleLogout() {
@@ -45,7 +45,7 @@ function Navbar(props) {
                   </Link>
                 </li>
                 <li>
-                  <Link to="/adduser" id="adduser">
+                  <Link to="/qr" id="adduser">
                     Add User
                   </Link>
                 </li>

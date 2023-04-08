@@ -7,6 +7,8 @@ import axios from "axios";
 import { useState } from "react";
 import { useAuthContext } from "../../hooks/useAuthContext";
 import DevicesCard from "../../components/DevicesCard/DevicesCard";
+import Add from "../../assets/plus.png";
+import { useNavigate } from "react-router-dom";
 function Home() {
   const { user } = useAuthContext();
   console.log(user?.user.firstname);
@@ -25,6 +27,7 @@ function Home() {
     },
   ];
   const [childData, setChildData] = useState();
+  const navigate = useNavigate();
   //   function matchUsers() {
   //     axios
   //       .get("https://coc-1.adityasurve1.repl.co/user/match", {
@@ -92,9 +95,20 @@ function Home() {
       <div className="childDevices blueColor">
         {data &&
           data.map((value, index) => {
-            return <DevicesCard data={value} index={index} />;
+            return (
+              <DevicesCard data={value} index={index} length={data.length} />
+            );
           })}
-        <h1>Your child devices</h1>
+
+        <div
+          className="addwrapper"
+          onClick={() => {
+            navigate("../qr");
+          }}
+        >
+          <img src={Add} />
+          <p>Add a Child device</p>
+        </div>
       </div>
     </div>
   );

@@ -11,9 +11,32 @@
 .blueColor {
   color: #456ee1;
 }
+.addwrapper {
+  display: block;
+}
+.addwrapper > ol {
+  list-style: none;
+  counter-reset: item;
+}
+.addwrapper > li {
+  counter-increment: item;
+  margin-bottom: 5px;
+}
+.qrWrapper {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  align-items: center;
+  justify-content: center;
+
+  padding: 0 5rem;
+}
+
 .childDevices {
   margin-left: 8%;
   margin-top: 2%;
+  margin-bottom: 2%;
+  display: flex;
+  gap: 5rem;
 }
 .homePP {
   width: 8rem;
