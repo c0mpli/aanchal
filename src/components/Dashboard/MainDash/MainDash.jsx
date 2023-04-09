@@ -2,7 +2,6 @@ import React from "react";
 import Cards from "../Cards/Cards";
 import Table from "../Table/Table";
 import "./MainDash.css";
-import Maps from "../../Maps/Maps";
 import BottomMiddle from "../BottomMiddle/BottomMiddle";
 const MainDash = () => {
   return (

@@ -5,10 +5,11 @@ import { UilSignOutAlt } from "@iconscout/react-unicons";
 import { SidebarData } from "../../Data/Data";
 import { UilBars } from "@iconscout/react-unicons";
 import { motion } from "framer-motion";
+import SidebarMode from "../SidebarComponents/SidebarMode";
 
 const Sidebar = () => {
   const [selected, setSelected] = useState(0);
-
+  const [toggle1, setToggle1] = useState(false);
   const [expanded, setExpaned] = useState(true);
 
   const sidebarVariants = {
@@ -35,28 +36,31 @@ const Sidebar = () => {
         animate={window.innerWidth <= 768 ? `${expanded}` : ""}
       >
         {/* logo */}
-        <div className="logo">
+        <div className="logo" style={{ marginBottom: "2rem" }}>
           <img src={Logo} alt="logo" />
           <span>Aanchal</span>
         </div>
-
-        <div className="menu">
-          {SidebarData.map((item, index) => {
-            return (
-              <div
-                className={selected === index ? "menuItem active" : "menuItem"}
-                key={index}
-                onClick={() => setSelected(index)}
-              >
-                <item.icon />
-                <span>{item.heading}</span>
-              </div>
-            );
-          })}
-          {/* signoutIcon */}
-          <div className="menuItem">
-            <UilSignOutAlt />
-          </div>
+        <SidebarMode
+          title="Focus Mode"
+          toggle={toggle1}
+          setToggle={setToggle1}
+        />
+        <SidebarMode
+          title="Bed Time"
+          toggle={toggle1}
+          setToggle={setToggle1}
+          repeat="no"
+        />
+        <SidebarMode
+          title="App Lock"
+          toggle={toggle1}
+          setToggle={setToggle1}
+          repeat="no"
+          time="no"
+        />
+        {/* signoutIcon */}
+        <div className="menuItem">
+          <UilSignOutAlt />
         </div>
       </motion.div>
     </>
