@@ -12,6 +12,7 @@ function SidebarMode(props) {
             props.setToggle(props.toggle ? false : true);
             console.log(props.toggle);
           }}
+          onColor="#4640DE"
           checkedIcon=""
           uncheckedIcon=""
         />

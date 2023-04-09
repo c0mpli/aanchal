@@ -3,11 +3,17 @@ import threedot from "../../../assets/3dot.png";
 import axios from "axios";
 import { useSearchParams } from "react-router-dom";
 function BottomMiddle() {
-  const [sitesData, sitesSetData] = useState();
+  const [sitesData, setSitesData] = useState();
+  const [searchParams, setSearchParams] = useSearchParams();
+  const id = searchParams.get("id");
   function getMultipleRandom(arr, num) {
     const shuffled = [...arr].sort(() => 0.5 - Math.random());
 
-    return shuffled.slice(0, num);
+    const f = shuffled.slice(0, num);
+    f.sort(function (a, b) {
+      return a["time"] - b["time"];
+    });
+    return f.reverse();
   }
   const appData = [
     {
@@ -21,7 +27,7 @@ function BottomMiddle() {
       time: "2h 4m",
     },
     {
-      icon: "https://cdn-icons-png.flaticon.com/512/2504/2504929.png",
+      icon: "https://cdn-icons-png.flaticon.com/512/3938/3938026.png",
       name: "Youtube",
       time: "3h 37m",
     },
@@ -31,18 +37,24 @@ function BottomMiddle() {
       time: "4h 23m",
     },
   ];
-  const [searchParams, setSearchParams] = useSearchParams();
-  const id = searchParams.get("id");
   function getData() {
-    axios
-      .get(
-        `https://cs-dj.workspaceomkarb.repl.co/child/device/urls?childId=${id}`
-      )
-      .then((res) => {
-        sitesSetData(res.data);
-        console.log(res.data);
-      })
-      .catch((e) => console.log(e));
+    // axios
+    //   .get(
+    //     `https://cs-dj.workspaceomkarb.repl.co/child/device/urls?childId=${id}`
+    //   )
+    //   .then((res) => {
+    //     console.log(res);
+    //     setSitesData(res.data);
+    //   })
+    //   .catch((e) => console.log(e));
+    fetch(
+      `https://cs-dj.workspaceomkarb.repl.co/child/device/urls?childId=${id}`
+    )
+      .then((res) => res.json())
+      .then((data) => {
+        console.log("dataatattaat", data);
+        setSitesData(data);
+      });
   }
   useEffect(() => {
     getData();
@@ -55,10 +67,10 @@ function BottomMiddle() {
         </h2>
         <div className="allSitesWrapper">
           {sitesData &&
-            sitesData?.splice(0, 2).map((value, key) => {
+            sitesData?.splice(0, 2).map((value, id) => {
               return (
                 <div className="siteWrapper" key={id}>
-                  {value}
+                  {value.url}
                 </div>
               );
             })}
@@ -70,7 +82,7 @@ function BottomMiddle() {
           Most used Apps
         </h2>
         <div className="allSitesWrapper">
-          {sitesData &&
+          {appData &&
             getMultipleRandom(appData, 2).map((value, key) => {
               return (
                 <div className="siteWrapper">

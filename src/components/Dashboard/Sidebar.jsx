@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "./Sidebar.css";
-import Logo from "../../imgs/logo.png";
+import Logo from "../../assets/logo.png";
 import { UilSignOutAlt } from "@iconscout/react-unicons";
 import { SidebarData } from "../../Data/Data";
 import { UilBars } from "@iconscout/react-unicons";
@@ -10,6 +10,10 @@ import SidebarMode from "../SidebarComponents/SidebarMode";
 const Sidebar = () => {
   const [selected, setSelected] = useState(0);
   const [toggle1, setToggle1] = useState(false);
+  const [toggle2, setToggle2] = useState(false);
+
+  const [toggle3, setToggle3] = useState(false);
+
   const [expanded, setExpaned] = useState(true);
 
   const sidebarVariants = {
@@ -20,7 +24,6 @@ const Sidebar = () => {
       left: "-60%",
     },
   };
-  console.log(window.innerWidth);
   return (
     <>
       <div
@@ -47,14 +50,14 @@ const Sidebar = () => {
         />
         <SidebarMode
           title="Bed Time"
-          toggle={toggle1}
-          setToggle={setToggle1}
+          toggle={toggle2}
+          setToggle={setToggle2}
           repeat="no"
         />
         <SidebarMode
           title="App Lock"
-          toggle={toggle1}
-          setToggle={setToggle1}
+          toggle={toggle3}
+          setToggle={setToggle3}
           repeat="no"
           time="no"
         />
