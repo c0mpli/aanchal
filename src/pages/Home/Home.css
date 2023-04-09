@@ -41,14 +41,14 @@
   flex-wrap: wrap;
 }
 .homePP {
-  width: 8rem;
-  height: 8rem;
+  width: 22rem;
+  height: 22rem;
   border-radius: 50%;
   display: flex;
   justify-content: center;
   align-items: center;
   margin: 0 auto;
-  margin-top: -6rem !important;
+  margin-top: -11rem !important;
   margin-bottom: 3rem;
 }
 .Home-bg {

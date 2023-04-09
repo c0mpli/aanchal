@@ -9,6 +9,7 @@ import { useAuthContext } from "../../hooks/useAuthContext";
 import DevicesCard from "../../components/DevicesCard/DevicesCard";
 import Add from "../../assets/plus.png";
 import { useNavigate } from "react-router-dom";
+import avatar from "../../assets/avatar.png";
 function Home() {
   const { user } = useAuthContext();
   const parent_id = user?.user._id;
@@ -37,7 +38,7 @@ function Home() {
         //setData(response.data);
         //setIsLoading(false);
         // save users in local storage
-        localStorage.setItem('usersForMap', JSON.stringify(response.data));
+        localStorage.setItem("usersForMap", JSON.stringify(response.data));
       })
       .catch((error) => {
         console.log(error);
@@ -58,11 +59,7 @@ function Home() {
           {user?.user.firstname} ! 👋
         </h1>
       </div>
-      <img
-        src={`https://api.dicebear.com/6.x/fun-emoji/svg?seed=${user?.user.firstname}`}
-        alt="avatar"
-        className="homePP"
-      />
+      <img src={avatar} alt="avatar" className="homePP" />
       <div className="childDevices blueColor">
         {childData &&
           childData.map((value, index) => {

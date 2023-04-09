@@ -52,7 +52,7 @@ function BottomMiddle() {
     )
       .then((res) => res.json())
       .then((data) => {
-        console.log("dataatattaat", data);
+        //console.log("dataatattaat", data);
         setSitesData(data);
       });
   }
@@ -66,11 +66,11 @@ function BottomMiddle() {
           Frequently visited sites
         </h2>
         <div className="allSitesWrapper">
-          {sitesData &&
-            sitesData?.splice(0, 2).map((value, id) => {
+          {appData &&
+            appData?.slice(1, 3).map((value, id) => {
               return (
                 <div className="siteWrapper" key={id}>
-                  {value.url}
+                  {value.name}
                 </div>
               );
             })}
