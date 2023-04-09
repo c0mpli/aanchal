@@ -4,6 +4,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Landing from "./pages/Landing/Landing";
 import Home from "./pages/Home/Home";
 import Login from "./pages/Login/Login";
+import FamMap from "./pages/FamMap/FamMap";
 import Qr from "./pages/QR/Qr";
 import { useAuthContext } from "./hooks/useAuthContext";
 import Mfa from "./pages/MFA/Mfa";
@@ -21,6 +22,7 @@ const App = () => {
           <Route path={"/qr"} element={<Qr />} />
           <Route path={"/dashboard"} element={<Dashboard />} />
           <Route path={"/mfa"} element={<Mfa />} />
+          <Route path={"/fammap"} element={<FamMap />} />
         </Routes>
       </BrowserRouter>
     </div>
