@@ -3,13 +3,14 @@ import "./Cards.css";
 import { cardsData } from "../../../Data/Data";
 import chart from "../../../assets/Chart.png";
 import Card from "../Card/Card";
-
+import OneMap from "../../../pages/OneMap/OneMap"
 const Cards = () => {
   return (
     <div className="Cards">
       <div className="parentContainer">
         <div className="mapContainer">
           <h4>Current Location</h4>
+          <OneMap />
         </div>
         <div></div>
         <div className="totalUsageContainer">

@@ -1,0 +1,35 @@
+.map-container-wrapper{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    /* width: 100vh; */
+    height: fit-content;
+    padding: 2rem;
+}
+
+.map-container-wrapper h1{
+    width: 100%;
+    text-align: center;
+    font-size: 2rem;
+    font-weight: 600;
+    color: #000;
+}
+.map-container {
+    width: 100%;
+    height: 90vh;
+  }
+  
+  .sidebarStyle {
+    display: inline-block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin: 12px;
+    background-color: #404040;
+    color: #ffffff;
+    z-index: 1 !important;
+    padding: 6px;
+    font-weight: bold;
+  }
+  

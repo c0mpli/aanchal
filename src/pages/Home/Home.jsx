@@ -36,6 +36,8 @@ function Home() {
         setChildData(response.data);
         //setData(response.data);
         //setIsLoading(false);
+        // save users in local storage
+        localStorage.setItem('usersForMap', JSON.stringify(response.data));
       })
       .catch((error) => {
         console.log(error);
