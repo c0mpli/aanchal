@@ -25,10 +25,20 @@ function DevicesCard(props) {
       </div>
       <div>
         <p>Age: {props.data.age} years</p>
-        <p>Last Used App: {props.data.lastApp}</p>
-        <p>Last Location: {props.data.lastLocation}</p>
+        <p>Last Used App: Instagram</p>
+        <p>Last Location: DJ Sanghvi, Vile Parle</p>
       </div>
-      <button>Click to view more</button>
+      <button
+        style={{
+          margin: "0 auto",
+          border: "1px solid #4640DE",
+          borderRadius: "10px",
+          padding: "0.7rem",
+          marginTop: "0.5rem",
+        }}
+      >
+        Click to view more
+      </button>
     </div>
   );
 }
