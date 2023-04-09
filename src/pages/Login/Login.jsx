@@ -38,7 +38,7 @@ function Login() {
       <div className="content-wrapper">
         <div className="login-form-container">
           <form className="login-form">
-            <h1>Sign in to a better dating experience.</h1>
+            <h1>Sign in to a safe life for our children.</h1>
             <input
               type="email"
               placeholder="Email"

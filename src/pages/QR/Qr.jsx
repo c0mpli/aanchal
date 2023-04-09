@@ -37,7 +37,13 @@ function Qr() {
             <li>Scan the QR code on the right to connect new device.</li>
           </ol>
         </div>
-        <div>
+        <div
+          style={{
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+          }}
+        >
           <QRCode value={`http://www.aanchal.com/?parent=${user?.user._id}`} />
         </div>
       </div>

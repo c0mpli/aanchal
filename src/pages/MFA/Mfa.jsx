@@ -32,7 +32,13 @@ function Mfa() {
         <div className="qrContent">
           <h2>Scan this QR Code in your Google Authenticator app.</h2>
         </div>
-        <div>
+        <div
+          style={{
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+          }}
+        >
           <QRCode value={qr_url} />
         </div>
       </div>

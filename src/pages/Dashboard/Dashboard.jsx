@@ -3,7 +3,7 @@ import Sidebar from "../../components/Dashboard/Sidebar";
 import MainDash from "../../components/Dashboard/MainDash/MainDash";
 import RightSide from "../../components/Dashboard/RigtSide/RightSide";
 
-function Dashboard() {
+function Dashboard(props) {
   return (
     <div className="App">
       <div className="AppGlass">

@@ -33,7 +33,6 @@ function Home() {
     axios
       .get(`https://cs-dj.workspaceomkarb.repl.co/child?parent=${parent_id}`)
       .then((response) => {
-        console.log(response.data);
         setChildData(response.data);
         //setData(response.data);
         //setIsLoading(false);

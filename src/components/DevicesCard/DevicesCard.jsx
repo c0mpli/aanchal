@@ -3,13 +3,13 @@ import "./DevicesCard.css";
 import { useNavigate } from "react-router-dom";
 import child1 from "../../assets/profile/child1.png";
 function DevicesCard(props) {
-  console.log(props.index, props.length);
   const navigate = useNavigate();
+  console.log(props.data, props.index);
   return (
     <div
       className="card-wrapper"
       onClick={() => {
-        navigate("../dashboard");
+        navigate(`../dashboard?id=${props.data?._id}`);
       }}
     >
       <div className="card-wrapper-head">

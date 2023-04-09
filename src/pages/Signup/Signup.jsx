@@ -69,11 +69,11 @@ function Signup() {
               <Link>Forget Password?</Link>
             </div>
             <button type="button" onClick={handleSubmit}>
-              Sign in
+              Sign up
             </button>
             <div className="login-subtitle">
-              <p>New Here?</p>
-              <Link to="/aboutyou">Signup</Link>
+              <p>Have an account?</p>
+              <Link to="/login">Signin</Link>
             </div>
           </form>
         </div>

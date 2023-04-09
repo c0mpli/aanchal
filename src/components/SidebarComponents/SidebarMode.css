@@ -1,0 +1,35 @@
+.mode-titleWrapper {
+  display: flex;
+  gap: 2rem;
+}
+.mode-titleWrapper2 {
+  display: flex;
+  gap: 1rem;
+}
+.timeInput {
+  width: 1.2rem;
+  height: 1.3rem;
+  text-align: center;
+}
+.timeInput:last-child {
+  margin-left: 3px;
+}
+.repeatInput {
+  width: 80px;
+}
+.ModeWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin: 1rem 0;
+  gap: 0.7rem;
+}
+.mode-grids {
+  margin-top: 0.4rem;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  row-gap: 1rem;
+  column-gap: -0rem;
+}
