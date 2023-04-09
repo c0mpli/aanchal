@@ -1,19 +1,52 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import threedot from "../../../assets/3dot.png";
+import axios from "axios";
+import { useSearchParams } from "react-router-dom";
 function BottomMiddle() {
-  const sitesData = ["www.google.com", "www.google.com"];
+  const [sitesData, sitesSetData] = useState();
+  function getMultipleRandom(arr, num) {
+    const shuffled = [...arr].sort(() => 0.5 - Math.random());
+
+    return shuffled.slice(0, num);
+  }
   const appData = [
     {
       icon: "https://cdn-icons-png.flaticon.com/512/2111/2111463.png",
       name: "Instagram",
-      time: "6h 9m",
+      time: "1h 3m",
     },
     {
-      icon: "https://cdn-icons-png.flaticon.com/512/2111/2111463.png",
-      name: "Instagram",
-      time: "6h 9m",
+      icon: "https://cdn-icons-png.flaticon.com/512/2504/2504957.png",
+      name: "Whatsapp",
+      time: "2h 4m",
+    },
+    {
+      icon: "https://cdn-icons-png.flaticon.com/512/2504/2504929.png",
+      name: "Youtube",
+      time: "3h 37m",
+    },
+    {
+      icon: "https://cdn-icons-png.flaticon.com/512/2504/2504929.png",
+      name: "Netflix",
+      time: "4h 23m",
     },
   ];
+  const [searchParams, setSearchParams] = useSearchParams();
+  const id = searchParams.get("id");
+  function getData() {
+    axios
+      .get(
+        `https://cs-dj.workspaceomkarb.repl.co/child/device/urls?childId=${id}`
+      )
+      .then((res) => {
+        sitesSetData(res.data);
+        console.log(res.data);
+      })
+      .catch((e) => console.log(e));
+  }
+  useEffect(() => {
+    getData();
+  }, []);
   return (
     <div className="parentContainer">
       <div>
@@ -22,8 +55,12 @@ function BottomMiddle() {
         </h2>
         <div className="allSitesWrapper">
           {sitesData &&
-            sitesData.map((value, key) => {
-              return <div className="siteWrapper">{value}</div>;
+            sitesData?.splice(0, 2).map((value, key) => {
+              return (
+                <div className="siteWrapper" key={id}>
+                  {value}
+                </div>
+              );
             })}
         </div>
       </div>
@@ -34,7 +71,7 @@ function BottomMiddle() {
         </h2>
         <div className="allSitesWrapper">
           {sitesData &&
-            appData.map((value, key) => {
+            getMultipleRandom(appData, 2).map((value, key) => {
               return (
                 <div className="siteWrapper">
                   <div style={{ display: "flex", gap: "0.8rem" }}>

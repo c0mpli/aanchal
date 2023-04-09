@@ -1,18 +1,18 @@
 import React from "react";
 import child1 from "../../../assets/profile/child1.png";
 import "./ChildProfile.css";
-function ChildProfile() {
+function ChildProfile({ totalApps, blockedApps, name, age }) {
   return (
     <div className="childProfile">
       <img className="childImage" src={child1} />
-      <h4>Sunidhi</h4>
-      <p className="greyColor">14 years old</p>
+      <h4>{name}</h4>
+      <p className="greyColor">{age} years old</p>
       <div className="app-details">
         <span>
-          <b>457</b> <span className="greyColor">apps used</span>
+          <b>{totalApps}</b> <span className="greyColor">apps used</span>
         </span>
         <span>
-          <b>10</b> <span className="greyColor">blocked apps</span>
+          <b>{blockedApps}</b> <span className="greyColor">blocked apps</span>
         </span>
       </div>
     </div>
