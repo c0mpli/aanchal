@@ -10,9 +10,7 @@ function Dashboard() {
   const [data, setData] = useState();
   function getData() {
     axios
-      .get(
-        `https://cs-dj.workspaceomkarb.repl.co/child/analytics?childId=${id}`
-      )
+      .get(`https://aanchal.onrender.com/child/analytics?childId=${id}`)
       .then((res) => {
         setData(res.data);
       })

@@ -40,16 +40,14 @@ function BottomMiddle() {
   function getData() {
     // axios
     //   .get(
-    //     `https://cs-dj.workspaceomkarb.repl.co/child/device/urls?childId=${id}`
+    //     `https://aanchal.onrender.com/child/device/urls?childId=${id}`
     //   )
     //   .then((res) => {
     //     console.log(res);
     //     setSitesData(res.data);
     //   })
     //   .catch((e) => console.log(e));
-    fetch(
-      `https://cs-dj.workspaceomkarb.repl.co/child/device/urls?childId=${id}`
-    )
+    fetch(`https://aanchal.onrender.com/child/device/urls?childId=${id}`)
       .then((res) => res.json())
       .then((data) => {
         //console.log("dataatattaat", data);

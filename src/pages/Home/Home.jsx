@@ -12,7 +12,7 @@ import { useNavigate } from "react-router-dom";
 import avatar from "../../assets/avatar.png";
 function Home() {
   const { user } = useAuthContext();
-  const parent_id = user?.user._id;
+  const parent_id = user?.user?._id;
   const data = [
     {
       name: "Sunidhi",
@@ -32,7 +32,7 @@ function Home() {
 
   function getData() {
     axios
-      .get(`https://cs-dj.workspaceomkarb.repl.co/child?parent=${parent_id}`)
+      .get(`https://aanchal.onrender.com/child?parent=${parent_id}`)
       .then((response) => {
         setChildData(response.data);
         //setData(response.data);

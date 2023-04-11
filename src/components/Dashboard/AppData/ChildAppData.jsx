@@ -12,22 +12,16 @@ function ChildAppData({ allApps, setAllApps, blockedApps, setBlockedApps }) {
   const ref1 = useRef();
   const ref2 = useRef();
   async function markBlocked(e) {
-    await axios.post(
-      "https://cs-dj.workspaceomkarb.repl.co/child/device/app/lock",
-      {
-        childId: id,
-        packageName: allApps[e.target.name].packageName,
-      }
-    );
+    await axios.post("https://aanchal.onrender.com/child/device/app/lock", {
+      childId: id,
+      packageName: allApps[e.target.name].packageName,
+    });
   }
   async function unmarkBlocked(e) {
-    await axios.post(
-      "https://cs-dj.workspaceomkarb.repl.co/child/device/app/lock",
-      {
-        childId: id,
-        packageName: blockedApps[e.target.name].packageName,
-      }
-    );
+    await axios.post("https://aanchal.onrender.com/child/device/app/lock", {
+      childId: id,
+      packageName: blockedApps[e.target.name].packageName,
+    });
   }
 
   function handleClassName() {

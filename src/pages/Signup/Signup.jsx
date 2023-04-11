@@ -18,7 +18,7 @@ function Signup() {
     event.preventDefault();
     const names = name.split(" ");
     axios
-      .post("https://cs-dj.workspaceomkarb.repl.co/user/register", {
+      .post("https://aanchal.onrender.com/user/register", {
         email: email,
         password: password,
         firstname: names[0],
